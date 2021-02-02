@@ -24,11 +24,6 @@ parameters:
     displayName: Output Directory
     value: /tmp/ace-server
     required: false
-  - name: DOCKER_USERNAME
-    description: The docker username used when tagging images
-    displayName: Docker username
-    required: true
-    value: aceuser
 objects:
 - apiVersion: v1
   kind: ImageStream
