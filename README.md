@@ -1,2 +1,2 @@
 # ace-s2i-demo
-Experiments with ACE and OpenShift S2I
+Initial experiments with S2I; see ot4i-ace-docker also
