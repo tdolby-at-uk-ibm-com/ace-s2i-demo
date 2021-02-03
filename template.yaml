@@ -48,13 +48,13 @@ objects:
 - apiVersion: v1
   kind: ImageStream
   metadata:
-    name: ace-s2i-runtime-image
+    name: ace-s2i-runtime-image2
   spec:
     tags:
     - name: latest
       from:
         kind: DockerImage
-        name: tdolby.dolbyfamily.org:52367/ace-s2i-runtime-image
+        name: tdolby.dolbyfamily.org:52367/ace-s2i-runtime-image2
 - apiVersion: v1
   kind: BuildConfig
   metadata:
@@ -106,7 +106,7 @@ objects:
       sourceStrategy:
         from:
           kind: ImageStreamTag
-          name: ace-s2i-runtime-image:0.1.0
+          name: ace-s2i-runtime-image2:0.1.0
         incremental: false
   status:
     lastVersion: 0
