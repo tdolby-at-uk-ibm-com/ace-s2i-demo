@@ -44,7 +44,7 @@ objects:
     - name: latest
       from:
         kind: DockerImage
-        name: tdolby.dolbyfamily.org:52367/ace-s2i-builder-image
+        name: tdolby.dolbyfamily.org:52367/ace-s2i-builder-image2
 - apiVersion: v1
   kind: ImageStream
   metadata:
@@ -98,7 +98,7 @@ objects:
       images:
         - from:
             kind: ImageStreamTag
-            name: ace-s2i-builder-image:0.1.0
+            name: ace-s2i-demo-builder:0.1.0
           paths:
             - destinationDir: .
               sourcePath: /tmp/src/
