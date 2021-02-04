@@ -134,7 +134,6 @@ objects:
         - image: ace-s2i-demo:0.1.0
           imagePullPolicy: IfNotPresent
           name: ace-s2i-demo
-	  command: /usr/local/s2i/run
           ports:
           - containerPort: 7800
             name: http
