@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ace-s2i
+  name: ace-s2i
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ace-s2i
+  template:
+    metadata:
+      labels:
+        app: ace-s2i
+    spec:
+      containers:
+        - image: image-registry.openshift-image-registry.svc:5000/default/ace-pipeline-demo
+          imagePullPolicy: Always
+          name: ace-s2i
+          ports:
+            - containerPort: 7800
+              protocol: TCP
