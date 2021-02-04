@@ -44,17 +44,17 @@ objects:
     - name: latest
       from:
         kind: DockerImage
-        name: tdolby.dolbyfamily.org:52367/ace-s2i-builder-image2
+        name: tdolby.dolbyfamily.org:52367/ace-s2i-builder-image
 - apiVersion: v1
   kind: ImageStream
   metadata:
-    name: ace-s2i-runtime-image2
+    name: ace-s2i-runtime-image
   spec:
     tags:
     - name: latest
       from:
         kind: DockerImage
-        name: tdolby.dolbyfamily.org:52367/ace-s2i-runtime-image2
+        name: tdolby.dolbyfamily.org:52367/ace-s2i-runtime-image
 - apiVersion: v1
   kind: BuildConfig
   metadata:
@@ -152,7 +152,7 @@ objects:
     - name: http
       port: 7800
     selector:
-      app: ${APP_NAME}
+      deployment: ${APP_NAME}
 - apiVersion: v1
   kind: Route
   metadata:

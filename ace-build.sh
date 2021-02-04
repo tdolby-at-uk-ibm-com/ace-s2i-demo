@@ -23,6 +23,12 @@ echo "In ace-build.sh with target directory of $1"
 echo "Running mqsipackagebar"
 mqsipackagebar -w . -a /tmp/application.bar -k aceFunction
 
-echo "Unpacking BAR"
+echo "Creating work directory"
+# This looks slightly odd, but for some reason with buildah we end up with a userid that can't access /var/mqsi
+# and so we redirect the product to a just-about-to-exist workpath.
+export MQSI_REGISTRY=$1/ace-server/config
 mqsicreateworkdir $1/ace-server
+
+echo "Unpacking BAR"
 mqsibar -c -w $1/ace-server -a /tmp/application.bar
+
